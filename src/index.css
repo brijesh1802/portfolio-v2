@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root { color-scheme: dark; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply text-zinc-200 font-sans antialiased;
+  background: #030303;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+
+/* Custom cursor — hide default on desktop */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+
+/* ========== LIQUID BACKGROUND ========== */
+/* ========== LIQUID BACKGROUND ========== */
+.liquid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #030303;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(95px);
+  will-change: transform, border-radius;
+  opacity: 0.4;
+}
+
+.blob-1 {
+  width: 55vmax;
+  height: 55vmax;
+  background: radial-gradient(circle at 30% 30%, #e11d48 0%, #9f1239 40%, transparent 70%);
+  top: -20%;
+  left: -15%;
+  animation: liquidMove1 22s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 50vmax;
+  height: 50vmax;
+  background: radial-gradient(circle at 70% 40%, #be123c 0%, #881337 45%, transparent 70%);
+  top: 15%;
+  right: -20%;
+  animation: liquidMove2 22s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 60vmax;
+  height: 45vmax;
+  background: radial-gradient(circle at 40% 60%, #f43f5e 0%, #e11d48 35%, transparent 65%);
+  bottom: -25%;
+  left: 10%;
+  animation: liquidMove3 22s ease-in-out infinite;
+}
+
+.blob-4 {
+  width: 40vmax;
+  height: 40vmax;
+  background: radial-gradient(circle at 50% 50%, #fb7185 0%, #be123c 40%, transparent 70%);
+  top: 40%;
+  left: 35%;
+  opacity: 0.28;
+  animation: liquidMove4 22s ease-in-out infinite;
+}
+
+/* Heavy retro film grain */
+.noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  animation: grainShift 0.4s steps(2) infinite;
+}
+
+/* Second finer grain layer for denser retro texture */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  animation: grainShift 0.3s steps(3) infinite reverse;
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1%, 1%); }
+  50% { transform: translate(1%, -1%); }
+  75% { transform: translate(-1%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Optional subtle vignette for more retro feel */
+.liquid-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.45) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Organic liquid keyframes */
+@keyframes liquidMove1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  }
+  25% {
+    transform: translate(12%, 18%) scale(1.15) rotate(8deg);
+    border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+  }
+  50% {
+    transform: translate(-8%, 25%) scale(0.9) rotate(-5deg);
+    border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
+  }
+  75% {
+    transform: translate(15%, -10%) scale(1.1) rotate(12deg);
+    border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  }
+}
+
+@keyframes liquidMove2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 50% 50% 40% 60% / 60% 40% 50% 50%;
+  }
+  30% {
+    transform: translate(-18%, 12%) scale(1.2) rotate(-10deg);
+    border-radius: 60% 40% 55% 45% / 40% 60% 45% 55%;
+  }
+  60% {
+    transform: translate(10%, -20%) scale(0.85) rotate(6deg);
+    border-radius: 40% 60% 50% 50% / 55% 45% 60% 40%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 50% 50% 40% 60% / 60% 40% 50% 50%;
+  }
+}
+
+@keyframes liquidMove3 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 55% 45% 60% 40% / 50% 55% 45% 50%;
+  }
+  40% {
+    transform: translate(20%, -15%) scale(1.12) rotate(15deg);
+    border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%;
+  }
+  70% {
+    transform: translate(-12%, 10%) scale(0.95) rotate(-8deg);
+    border-radius: 60% 40% 50% 50% / 45% 55% 40% 60%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 55% 45% 60% 40% / 50% 55% 45% 50%;
+  }
+}
+
+@keyframes liquidMove4 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 50% 50%;
+  }
+  25% {
+    transform: translate(-15%, -12%) scale(1.25);
+    border-radius: 60% 40% 55% 45%;
+  }
+  50% {
+    transform: translate(18%, 15%) scale(0.8);
+    border-radius: 40% 60% 45% 55%;
+  }
+  75% {
+    transform: translate(-8%, 20%) scale(1.1);
+    border-radius: 55% 45% 60% 40%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 50% 50%;
+  }
+}
+
+.section { @apply relative z-10 px-6 md:px-10 lg:px-16 py-28 md:py-36; }
+.container { @apply max-w-4xl mx-auto; }
+
+.card {
+  @apply rounded-2xl p-7 md:p-8 transition-all duration-500;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(225, 29, 72, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(225, 29, 72, 0.15);
+}
+
+.tag {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium tracking-wide;
+  background: rgba(225, 29, 72, 0.08);
+  color: #fb7185;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #e11d48; }
+::selection { background: rgba(225, 29, 72, 0.3); color: white; }
