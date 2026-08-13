@@ -18,7 +18,7 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'feabdc64-d1da-4f1c-b129-cafbcd943fb9',
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
           subject: `Portfolio message from ${form.name}`,
           from_name: form.name,
           ...form,
