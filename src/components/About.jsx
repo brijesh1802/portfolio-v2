@@ -24,7 +24,7 @@ export default function About() {
               Nutanix Certified Professional (NCP-MCI 6).
             </p>
             <p>
-              Skilled in RHOCP, MicroShift, RHEL KVM, Ceph Storage, Ansible automation, and edge
+              Skilled in RHOCP, MicroShift, RHEL KVM, Ceph Storage, and edge
               computing — with a track record of meeting 100% of customer-defined SLAs and acceptance
               criteria on every enterprise engagement.
             </p>
@@ -32,11 +32,10 @@ export default function About() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-8">
             {[
-              { label: 'Location', value: 'Hyderabad' },
               { label: 'Role', value: 'Associate Consultant' },
-              { label: 'Focus', value: 'OpenShift / Edge' },
+              { label: 'Focus', value: 'OpenShift / Nutanix Kubernetes Platform' },
               { label: 'Certs', value: '4 Active' },
             ].map((item) => (
               <div key={item.label}>

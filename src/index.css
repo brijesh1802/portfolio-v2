@@ -235,3 +235,26 @@ body {
 ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #e11d48; }
 ::selection { background: rgba(225, 29, 72, 0.3); color: white; }
+
+
+/* Disable liquid animation on mobile for performance */
+@media (max-width: 768px) {
+  .blob {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .noise,
+  .noise::after {
+    animation: none !important;
+  }
+}
+
+/* Also respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .blob,
+  .noise,
+  .noise::after {
+    animation: none !important;
+  }
+}

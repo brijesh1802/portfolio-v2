@@ -1,15 +1,26 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const particles = Array.from({ length: 32 }, (_, i) => ({
   id: i,
   x: Math.random() * 100,
   y: Math.random() * 100,
-  size: Math.random() * 5 + 3,        // 3px – 8px
+  size: Math.random() * 5 + 3,
   duration: Math.random() * 10 + 8,
   delay: Math.random() * 4,
 }))
 
 export default function FloatingParticles() {
+  const [enabled, setEnabled] = useState(false)
+
+  useEffect(() => {
+    // Only enable on desktop with fine pointer
+    const isDesktop = window.matchMedia('(min-width: 768px) and (pointer: fine)').matches
+    setEnabled(isDesktop)
+  }, [])
+
+  if (!enabled) return null
+
   return (
     <div className="fixed inset-0 z-[1] pointer-events-none overflow-hidden" aria-hidden>
       {particles.map((p) => (

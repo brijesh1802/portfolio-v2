@@ -3,27 +3,19 @@ import FadeIn from './FadeIn'
 const groups = [
   {
     title: 'Container Platforms',
-    items: ['Red Hat OpenShift (RHOCP)', 'MicroShift', 'Red Hat Device Edge', 'Kubernetes'],
+    items: ['Red Hat OpenShift (RHOCP)', 'MicroShift', 'Kubernetes', 'Nutanix Kubernetes Platform'],
   },
   {
     title: 'Container Tools',
-    items: ['Podman', 'Docker', 'Quay Registry', 'Image Mirroring'],
+    items: ['Podman', 'Docker'],
   },
   {
     title: 'Virtualization & Storage',
     items: ['RHEL KVM', 'VMware vSphere', 'Nutanix AHV', 'Red Hat Ceph Storage', 'OpenShift Data Foundation'],
   },
   {
-    title: 'Automation & OS',
-    items: ['Ansible', 'Bash Scripting', 'RHEL 8 / 9'],
-  },
-  {
-    title: 'Networking & Deployment',
-    items: ['DNS', 'HAProxy', 'Ingress Routing', 'NMState Operator', 'UPI', 'Agent-Based Installer', 'Air-Gapped'],
-  },
-  {
     title: 'OpenStack & Observability',
-    items: ['RHOSO v18', 'Nova / Neutron / Glance / Keystone / Cinder', 'Loki', 'Compliance Operator', 'OpenShift Monitoring'],
+    items: ['RHOSO v18', 'Nova / Neutron / Glance / Keystone / Cinder', 'Loki', 'Compliance Operator', 'OpenShift Monitoring', 'Prometheus & Grafana'],
   },
   {
     title: 'Cloud & AI/ML',

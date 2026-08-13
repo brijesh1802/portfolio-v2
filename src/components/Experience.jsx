@@ -6,10 +6,11 @@ const jobs = [
     company: 'KubeRox Technologies',
     period: 'Oct 2025 — Present',
     points: [
-      'Deployed 3 production Hybrid OCP clusters on RHEL KVM for a banking client serving 80M+ customers.',
+      'Deployed 3 production Hybrid OCP clusters on RHEL KVM for a Indian banking client serving 80M+ customers.',
       'Built enterprise networking (DNS, HAProxy, ingress) under banking security standards.',
       'Delivered RHOSO v18 with 3-node HA Ceph and automated OpenStack services.',
       'Executed fully air-gapped OpenShift deployments using UPI & Agent-Based Installer.',
+      'Deployed Nutanix Kubernetes Platform (NKP) for a Saudi government department and a major Indian pharma company.',
     ],
   },
   {

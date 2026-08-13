@@ -24,6 +24,17 @@ const projects = [
     tags: ['RHOSO', 'Ceph', 'OpenStack Operator', 'Assisted Installer'],
   },
   {
+    title: 'Nutanix Kubernetes Platform (NKP) Deployment',
+    client: 'Saudi Government Department & Major Indian Pharma Company',
+    points: [
+      'Architected and deployed production-grade Nutanix Kubernetes Platform (NKP) clusters for a Saudi government department and a leading Indian pharmaceutical enterprise.',
+      'Configured high-availability control planes, persistent storage with Nutanix CSI, and enterprise networking for secure, scalable container workloads.',
+      'Implemented lifecycle management, monitoring, and security hardening to meet government and regulated-industry compliance requirements.',
+      'Delivered end-to-end platform validation, knowledge transfer, and production readiness across both environments.',
+    ],
+    tags: ['Nutanix', 'NKP', 'Kubernetes', 'CSI', 'Government', 'Pharma'],
+  },
+  {
     title: 'MicroShift Edge Platform Deployment',
     client: 'Retail Edge Infrastructure — Red Hat Device Edge',
     points: [
@@ -53,6 +64,7 @@ const projects = [
     ],
     tags: ['RAG', 'LangChain', 'FAISS', 'Ollama', 'FastAPI'],
   },
+
 ]
 
 export default function Projects() {
