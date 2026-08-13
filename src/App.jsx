@@ -14,6 +14,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
 import Training from './components/Training'
+import Loader from './components/Loader'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -36,6 +38,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen">
+      <Loader />
       <CustomCursor />
       <LiquidBackground />
       <FloatingParticles />
@@ -53,6 +56,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
