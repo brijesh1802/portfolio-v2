@@ -13,6 +13,7 @@ import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
+import Training from './components/Training'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -48,6 +49,7 @@ function App() {
         <Skills />
         <Education />
         <Certifications />
+        <Training />
         <Contact />
       </main>
       <Footer />
