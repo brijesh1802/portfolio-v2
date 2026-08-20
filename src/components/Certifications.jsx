@@ -7,6 +7,12 @@ const certs = [
     issuer: 'Red Hat',
     desc: 'Validates hands-on expertise in deploying, configuring, and managing OpenShift Container Platform clusters including networking, storage, security policies, and application lifecycle management.',
   },
+    {
+    code: 'NCP-AI 6',
+    name: 'Nutanix Certified Professional — Artificial Intelligence',
+    issuer: 'Nutanix',
+    desc: 'Demonstrates proficiency in deploying and managing AI/ML workloads on Nutanix Kubernetes environments, including GPU management, and integration with AI frameworks.',
+  },
   {
     code: 'NCP-MCI 6',
     name: 'Nutanix Certified Professional — Multicloud Infrastructure',
